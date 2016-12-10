@@ -22,15 +22,9 @@ def transform_comment(comment, type):
 
 def transform_comments_list(l, type):
     new = {}
-    if type == 'bunker':
-        for i in l:
-            c = transform_comment(i, 'bunker')
-            new[c.id] = c
-    elif type =='tabun':
-        for i in list(l.values()):
-            c = transform_comment(i, 'tabun')
-            new[c.id] = c
-
+    for i in list(l.values()):
+        c = transform_comment(i, type)
+        new[c.id] = c
     return new
 
 def add_antispam(s):
